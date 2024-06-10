@@ -4,7 +4,7 @@ import Cookies from 'universal-cookie'
 import {ChannelSearch, TeamChannelList,TeamChannelPreview} from './'
 import HospitalIcon from '../assets/hospital.png'
 import LogoutIcon from '../assets/logout.png'
-const Sidebar =() => {
+const Sidebar =() => (
   <div className='channel-list__sidebar'>
     <div className='channel-list__sidebar__icon1'>
       <div className='icon1__inner'>
@@ -18,20 +18,49 @@ const Sidebar =() => {
     </div>
 
   </div>
-}
+)
 
-const CompanyHeader = () => {
+const CompanyHeader = () => (
   <div className='channel-list__header'>
     <p className='channel-list__header__text'>UsChat</p>
   </div>
-}
+)
 
-export const ChannelListContainer = () => {
+export const ChannelListContainer = () =>{
   return (
     <>
     <Sidebar />
     <div className='channel-list__list__wrapper'>
-      <ChannelHeader />
+      <CompanyHeader />
+      <ChannelSearch/>
+      <ChannelList
+      filters={{}}
+      channelRenderFilterFn={()=>{}}
+      List={(listProps)=>(
+        <TeamChannelList {
+        ...listProps}
+        type="team"/>
+      )}
+      Preview={(previewProps)=> (
+        <TeamChannelPreview
+        {...previewProps}
+        type="team"/>
+      )
+      }/>
+      <ChannelList
+      filters={{}}
+      channelRenderFilterFn={()=>{}}
+      List={(listProps)=>(
+        <TeamChannelList {
+        ...listProps}
+        type="messaging"/>
+      )}
+      Preview={(previewProps)=> (
+        <TeamChannelPreview
+        {...previewProps}
+        type="messaging"/>
+      )
+      }/>
     </div>
     
     </>

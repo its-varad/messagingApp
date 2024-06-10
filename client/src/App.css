@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #005fff;
+    --primary-color: #282828;
     --primary-color-alpha: #005fff1a;
   }
   
@@ -372,32 +372,33 @@
   
   .channel-list__sidebar {
     width: 72px;
+    padding: 5px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       var(--primary-color);
-    box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.25);
+    
     /* border-top-left-radius: 16px; */
     /* border-bottom-left-radius: 16px; */
   }
   
   .channel-list__sidebar__icon1 {
-    width: 44px;
-    height: 44px;
-    margin: 14px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
     background: linear-gradient(
         150.64deg,
         rgba(0, 0, 0, 0.1) 12.73%,
         rgba(0, 0, 0, 0) 89.32%
       ),
       #ffffff;
-    border-radius: 9999px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+    border-radius: 10px;
+   
   }
   
   .channel-list__list__wrapper {
     display: flex;
     flex-direction: column;
     background: var(--primary-color);
-    width: 240px;
+    width: 400px;
   }
   
   .icon1__inner {
@@ -409,17 +410,17 @@
   }
   
   .channel-list__sidebar__icon2 {
-    width: 44px;
-    height: 44px;
-    margin: 14px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
     background: linear-gradient(
         150.64deg,
         rgba(0, 0, 0, 0.1) 12.73%,
         rgba(0, 0, 0, 0) 89.32%
       ),
       #ffffff;
-    border-radius: 9999px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+    border-radius: 10px;
+   
     cursor: pointer;
   }
   
@@ -432,7 +433,7 @@
   }
   
   .channel-list__header {
-    padding-left: 16px;
+    padding-left: 20px;
     height: 62px;
   }
   
@@ -440,7 +441,7 @@
     font-family: Helvetica Neue, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 28px;
     color: #ffffff;
   }
@@ -456,24 +457,28 @@
   
   .channel-search__input__wrapper {
     display: flex;
-    justify-content: center;
+   
     align-items: center;
     height: 40px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    margin-bottom: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
     border: 1px solid transparent;
-    width: 95%;
+    width: 80%;
   }
   
   .channel-search__input__wrapper:focus-within {
-    border: 1px solid #fff;
+    border: 2px solid #ffffff;
+    opacity: 50%;
   }
   
   .channel-search__input__icon {
     width: 32px;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   
   .channel-search__input__text {
@@ -498,7 +503,6 @@
     background: #fff;
     border: 1px solid #e9e9ea;
     box-sizing: border-box;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     z-index: 10;
     left: 230px;
