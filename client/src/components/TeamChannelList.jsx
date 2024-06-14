@@ -1,8 +1,8 @@
 import React from 'react'
 import { AddChannel } from '../assets'
-export const TeamChannelList = ({children,error=false,loading,type}) => {
+export const TeamChannelList = ({children,error=false,loading,type,isCreating,setIsCreating,setCreateType,setIsEditing,setToggelContainer}) => {
     if(error) {
-        return type =='team' ? (
+        return type ==='team' ? (
             <div className='team-channel-list'>
                 <p className='team-channel-list__message'>
                     connection error, please try again later
@@ -30,6 +30,13 @@ export const TeamChannelList = ({children,error=false,loading,type}) => {
 
             </p>
         </div>
+        <AddChannel
+        isCreating= {isCreating}
+        setIsCreating={setIsCreating}
+        setCreateType={setCreateType}
+        setIsEditing={setIsEditing}
+        type = {type==='team'?'team': 'messaging'}
+        setToggleContainer={setToggelContainer}/>
       {children}
     </div>
   )

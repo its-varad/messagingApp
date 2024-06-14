@@ -27,7 +27,7 @@ export const Auth = () => {
         const URL = 'http://localhost:4000/auth';
 
         try {
-            const response = await fetch(`${URL}/${isSignUp ? "signup" : "signin"}`, {
+            const response = await fetch(`${URL}/${isSignUp ? "signup" : "login"}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -122,6 +122,7 @@ export const Auth = () => {
                             </>
                         )}
                         <div className='auth__form-container_fields-content_input'>
+                            <div className='auth__form-container_fields-content_input_password'>
                             <label htmlFor='password'>Password</label>
                             <input
                                 name='password'
@@ -130,9 +131,12 @@ export const Auth = () => {
                                 onChange={handleChange}
                                 required
                             />
+                            </div>
+                            
                         </div>
                         {isSignUp && (
                             <div className='auth__form-container_fields-content_input'>
+                                <div className='auth__form-container_fields-content_input_password'>
                                 <label htmlFor='confirmPassword'>Confirm Password</label>
                                 <input
                                     name='confirmPassword'
@@ -141,6 +145,8 @@ export const Auth = () => {
                                     onChange={handleChange}
                                     required
                                 />
+                                </div>
+                                
                             </div>
                         )}
                         <div className='auth__form-container_fields-content_button'>
@@ -153,14 +159,16 @@ export const Auth = () => {
                                 ? 'Already have an account?'
                                 : "Don't have an account?"}
                             <span onClick={switchMode}>
-                                {isSignUp ? 'Sign In' : 'Sign Up'}
+                                {isSignUp ? ' Sign In' : ' Sign Up'}
                             </span>
                         </p>
                     </div>
                 </div>
+                
             </div>
             <div className='auth__form-container_image'>
-                <img src={signinImage} alt='sign in' />
+                <img src={signinImage} alt='sign in' width='20' />
+                <p className='usChat'>UsChat</p>
             </div>
         </div>
     );

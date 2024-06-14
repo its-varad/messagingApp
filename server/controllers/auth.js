@@ -2,7 +2,8 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const { connect } = require('getstream');
-const { StreamChat } = require('stream-chat').StreamChat;
+const { StreamChat } = require('stream-chat');
+
 
 const api_key = process.env.STREAM_API_KEY;
 const api_secret = process.env.STREAM_API_SECRET;
@@ -26,7 +27,7 @@ const signup = async (req, res) => {
     }
 };
 
-const login = async (req, res) => {
+const login= async (req, res) => {
     try {
         const { username, password } = req.body;
 
@@ -37,6 +38,7 @@ const login = async (req, res) => {
         const serverClient = connect(api_key, api_secret, app_id);
         const client = StreamChat.getInstance(api_key, api_secret);
         const { users } = await client.queryUsers({ name: username });
+        await client.connectUser({ id: api_key }, api_secret);
 
         if (!users.length) {
             return res.status(400).json({ message: "User not found" });
@@ -57,4 +59,4 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { signup, login };
+module.exports = { signup, login};

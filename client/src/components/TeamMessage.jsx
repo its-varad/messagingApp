@@ -1,11 +1,10 @@
 import React from 'react'
 
-export const App = () => {
+export const TeamMessage = () => {
   return (
     <div>
-      <h1>Us Chat</h1>
+      
     </div>
   )
 }
-
 
