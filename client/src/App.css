@@ -445,7 +445,7 @@
   .channel-list__sidebar {
     width: 72px;
     padding: 5px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    background: 
       var(--primary-color);
     
     /* border-top-left-radius: 16px; */
@@ -1799,7 +1799,7 @@
   .channel-list__container-responsive {
     display: none;
     height: 100%;
-    box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
+    background: #005fff;
     position: absolute;
     width: 90%;
     top: 0%;
